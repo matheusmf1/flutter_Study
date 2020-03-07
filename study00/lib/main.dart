@@ -1,32 +1,36 @@
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:study00/constans.dart';
 
 void main() => runApp( MaterialApp(
   home: Home(),
+  debugShowCheckedModeBanner: false,
+  theme: ThemeData (
+    primarySwatch: Colors.blue,
+  ),
 ));
 
 
 class Home extends StatelessWidget {
-  // A Stateless widget cannot change overTime, it can contains data, but its
+  // A Stateless widget cannot change overTime, it can contains data, but it's defined just once
   @override
   Widget build( BuildContext context ) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar (
         title: Text('My First App'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'Hi there',
-          style: TextStyle(
-              fontSize: 20,
-              letterSpacing: 2.0,
-              fontWeight: FontWeight.bold
-          ),
+      backgroundColor: Colors.indigoAccent,
+      body: GestureDetector(
+        child: Image(
+          image: NetworkImage( urlPokemonBuilder( Random().nextInt(800) ) ),
         ),
+        onTap: () => { print('Hi there image') },
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () => { print('pressed') },
+          onPressed: () => { print('Hi there') },
           child: Text('click')
       ),
     );
