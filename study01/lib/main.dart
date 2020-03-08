@@ -25,13 +25,23 @@ class Home extends StatelessWidget {
         title: Text("Study 01"),
         centerTitle: true,
       ),
-      body: Container(
-        // The container uses the space needed from it's child, it has margin and padding
-        padding: EdgeInsets.all(15.0),
-        margin: EdgeInsets.all(20.0),
-        color: Colors.grey[300],
-        child: Text('Hi there'),
-
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text('test01'),
+          RaisedButton(
+            child: Text('click'),
+            color: Colors.indigo[200],
+            onPressed: () => { print('hi') },
+          ),
+          Container(
+            child: Text('Container'),
+            color: Colors.grey[300],
+            padding: EdgeInsets.all(15.0),
+            
+          ),
+        ],
       ),
     );
   }
