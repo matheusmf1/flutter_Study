@@ -25,23 +25,106 @@ class Home extends StatelessWidget {
         title: Text("Study 01"),
         centerTitle: true,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Text('test01'),
-          RaisedButton(
-            child: Text('click'),
-            color: Colors.indigo[200],
-            onPressed: () => { print('hi') },
-          ),
-          Container(
-            child: Text('Container'),
-            color: Colors.grey[300],
-            padding: EdgeInsets.all(15.0),
-            
-          ),
-        ],
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(5.0),
+              color: Colors.grey[300],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text('test01'),
+                  RaisedButton(
+                    child: Text('click'),
+                    color: Colors.indigo[200],
+                    onPressed: () => { print('hi') },
+                  ),
+                  Container(
+                    child: Text('Container'),
+                    color: Colors.grey[300],
+                    padding: EdgeInsets.all(15.0),
+
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(5.0),
+              color: Colors.grey[300],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text('test01'),
+                  RaisedButton(
+                    child: Text('click'),
+                    color: Colors.indigo[200],
+                    onPressed: () => { print('hi') },
+                  ),
+                  Container(
+                    child: Text('Container'),
+                    color: Colors.grey[300],
+                    padding: EdgeInsets.all(15.0),
+
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(5.0),
+              color: Colors.grey[300],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text('test01'),
+                  RaisedButton(
+                    child: Text('click'),
+                    color: Colors.indigo[200],
+                    onPressed: () => { print('hi') },
+                  ),
+                  Container(
+                    child: Text('Container'),
+                    color: Colors.grey[300],
+                    padding: EdgeInsets.all(15.0),
+
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(5.0),
+              color: Colors.grey[300],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text('test01'),
+                  RaisedButton(
+                    child: Text('click'),
+                    color: Colors.indigo[200],
+                    onPressed: () => { print('hi') },
+                  ),
+                  Container(
+                    child: Text('Container'),
+                    color: Colors.grey[300],
+                    padding: EdgeInsets.all(15.0),
+
+                  ),
+                ],
+              ),
+            ),
+
+          ],
+        ),
       ),
     );
   }
