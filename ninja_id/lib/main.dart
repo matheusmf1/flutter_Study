@@ -7,7 +7,18 @@ void main() => runApp( MaterialApp(
 ));
 
 
-class MyCard extends StatelessWidget {
+class MyCard extends StatefulWidget {
+  @override
+  _MyCardState createState() => _MyCardState();
+}
+
+class _MyCardState extends State<MyCard> {
+
+  // defines data that will be modified
+
+  int ninjaLevel = 0;
+
+
   @override
   Widget build( BuildContext context ) {
     return Scaffold(
@@ -18,6 +29,18 @@ class MyCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+//          ninjaLevel++; // just this won't update the counter, to update the Widget we have to use setState
+          setState( () {
+            ninjaLevel+= 1;
+          });
+
+          },
+        child: Icon( Icons.add ),
+        backgroundColor: Colors.grey[800],
       ),
 
       body: Padding(
@@ -66,7 +89,7 @@ class MyCard extends StatelessWidget {
             ),
             SizedBox( height: 7.75 ), // it put a space between the contents
             Text(
-              '8000',
+              '${ninjaLevel}',
               style: TextStyle(
                   color: Colors.amberAccent[200],
                   letterSpacing: 2.0,
