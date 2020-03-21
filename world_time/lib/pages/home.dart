@@ -13,7 +13,19 @@ class _HomeState extends State<Home> {
     return Scaffold(
 
       body: SafeArea (
-          child: Text('Home Screen')
+          child: Column(
+
+            children: <Widget>[
+
+              FlatButton.icon(
+                  onPressed: () {
+
+                   Navigator.pushNamed( context, '/location' ); // this is a func that push a new screen into the current one, it's a stack
+
+                  }, icon: Icon( Icons.edit_location ), label: Text( 'Edit Location' ))
+
+            ],
+          )
 
       ),
 
