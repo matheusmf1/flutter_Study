@@ -1,20 +1,31 @@
 import 'package:mobx/mobx.dart';
 
-class Counter {
+part 'counter.g.dart';
 
-  Counter(){
-    increment = Action(_increment);
-  }
+class Counter = _Counter with _$Counter;
 
-// Listener 
-  Observable _count = Observable(0);
+abstract class _Counter with Store {
+  // Counter() {
+  //   increment = Action(_increment);
+  // }
 
-  int get count => _count.value;
+// Listener
+  // Observable _count = Observable(0);
+
+  // int get count => _count.value;
 
 // Acao a ser tomada de acordo com o listener
-  Action increment;
+  // Action increment;
 
-  void _increment() {
-    _count.value++;
-  }
+  // void _increment() {
+  //   _count.value++;
+  // }
+
+// The same as the listener
+  @observable
+  int count = 0;
+
+// The same as the action
+  @action
+  void increment() => count++;
 }
