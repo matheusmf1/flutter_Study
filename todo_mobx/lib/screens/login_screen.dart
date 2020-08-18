@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
 import 'package:todomobx/widgets/custom_icon_button.dart';
 import 'package:todomobx/widgets/custom_text_field.dart';
+
+import '../stores/login_store.dart';
 
 import '../stores/login_store.dart';
 import 'list_screen.dart';
@@ -13,11 +16,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  LoginStore loginStore = LoginStore();
 
+  LoginStore loginStore;
 
-// Serve para limpar a memoria, pois o reaction fica rodando para sempre
-ReactionDisposer disposer;
+  // Serve para limpar a memoria, pois o reaction fica rodando para sempre
+  ReactionDisposer disposer;
 
   @override
   void didChangeDependencies() {
@@ -31,6 +34,8 @@ ReactionDisposer disposer;
     //   }
 
     // });
+
+    loginStore = Provider.of<LoginStore>(context);
 
 // duas func, primeira para monitorar um valor
 // a segunda é efeito, que recebe o valor modificado da primeira

@@ -33,16 +33,6 @@ abstract class _LoginStore with Store {
   @observable
   bool loggedIn = false;
 
-  @action
-  Future<void> login() async {
-    loading = true;
-
-    // process data
-    await Future.delayed( Duration( seconds: 2 ) );
-
-    loading = false;
-    loggedIn = true;
-  }
 
   @action
   void isPasswordVisible() => passwordVisible = !passwordVisible;
@@ -59,5 +49,24 @@ abstract class _LoginStore with Store {
   @computed
   Function get loginPressed => 
     ( isEmailValid && isPasswordValid && !loading ) ? login : null;
+
+ @action
+  Future<void> login() async {
+    loading = true;
+
+    // process data
+    await Future.delayed( Duration( seconds: 2 ) );
+
+    loading = false;
+    loggedIn = true;
+
+    email = "";
+    password = "";
+  }
+
+  @action
+  void logout(){
+    loggedIn = false;
+  }
 
 }
